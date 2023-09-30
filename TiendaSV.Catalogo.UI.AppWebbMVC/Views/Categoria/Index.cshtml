@@ -1,0 +1,194 @@
+﻿
+@{
+    ViewBag.Title = "Categorias";
+    Layout = "~/Views/Share/_Layout.cshtml";
+}
+<div class="row justify-content-center">
+    <div class="col-6">
+        <form class="card text-bg-light mb-3" id="frmBuscar">
+            <div class="card-header text-center fw-bold"> Mantenimiento de categorias </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-7">
+                        <label for="txtNombreB" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="Nombre" name="Nombre"/>
+                    </div>
+                    <div class="col-5 d-flex align-items-end">
+
+                        <button type="button" id="btnBuscar" class="btn btn-primary me-2">Buscar  </button>
+                        <button type="button" id="btnNuevo" class="btn btn-secondary me-2">Nuevo  </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="w-100"> </div><!--brinco forsado-->
+    <div class="col-5">
+        <table class="table table-striped table-border" id="tbDatosCategoria">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+                <tbody></tbody>
+         </table>
+    </div> 
+</div>
+<!----Modal----------->
+<div class="modal" tabindex="-1" id="mdlMantCategoria">
+    <form class="modal-dialog" id="frmMantCategoria">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mdlTitulo">  Nueva Categoria  </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" arial-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="txtId" name="Id"/>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="txtNombre" class="col-form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="txtNombre" name="Nombre"/>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="btnConfirmar">Confirmar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts{
+    <script>
+        // $(selector).funcion()
+        //Seccion de buscar
+        $("#btnBuscar").click(function () {
+            fnBuscar();
+        });
+
+
+
+        function fnBuscar() {
+            $.ajax({
+
+                method: 'POST',
+                url: '@Url.Action("Buscar","Categoria")',
+                data: $("#frmBuscar").serialize(),
+                datatype: JSON,
+                success: function (lista) {
+                    var tbody = $("#tbDatosCategoria > tbody");
+                    tbody.empty();
+                    for (var i = 0; i < lista.length; i++) {
+                        var fila = "<tr>\
+                                          <td>"+ lista[i].Id + "</td>\
+                                          <td>"+ lista[i].Nombre + "</td>\
+                                          <td>\
+                                            <button type='button' class='btn btn-warning me-2' onclick='fnObtenerDatosModificar(" + lista[i].Id + ")'>Editar</button>\
+                                            <button type='button' class='btn btn-danger' onclick='fnEliminar(" + lista[i].Id + ")'>Eliminar</button>\
+                                          </td>\
+                                    </tr > ";
+                        tbody.append(fila);
+                    }
+                },
+                error: function(error){
+                    alert("Error: " + error.statusText)
+            }
+
+            });
+        }
+        //Seccion de nuevo y editar
+        const mdlMantCategoria = new bootstrap.Modal('#mdlMantCategoria', { keyboard: false, backdrop: 'static' });
+
+        $("#btnNuevo").click(function () {
+            $('#mdlTitulo').text("Nueva Categoria");
+
+            mdlMantCategoria.show();
+        });
+        
+        function fnObtenerDatosModificar(pId) {
+            $.ajax({
+                method: 'POST',
+                url: '@Url.Action("BuscarPorId","Categoria")',
+                data: { 'pId': pId },
+                datatype: JSON,
+                success: function (objCategoria) {
+                    $('#txtId').val(objCategoria.Id);
+                    $('#txtNombre').val(objCategoria.Nombre);
+
+                    $('#mdlTitulo').text("Editar Categoria");
+                    mdlMantCategoria.show();
+                },
+                error: function (error) {
+                    alert("Error:" + error.statusText);
+                }
+            });
+        }
+
+        //Evento MOdal
+        document.getElementById("mdlMantCategoria").addEventListener('hidden.bs.modal', function () {
+            //Evento cunado se cierra el modal
+            //limpiar los controles
+            $("#txtId").val("");
+            $("#txtNombre").val("");
+        });
+
+        function fnConfirmarDatos() {
+            var urlAccion = '@Url.Action("Guardar","Categoria")';
+
+            if (parseInt($("#txtId").val()) > 0) {
+                urlAccion = '@Url.Action("Modificar","Categoria")';
+            }
+
+            $.ajax({
+                method: 'POST',
+                url: urlAccion,
+                data: $("#frmMantCategoria").serialize(),
+                datatype: JSON,
+                success: function (resultado) {
+                    if (resultado > 0) {
+                        alert("Los datos se guardaron exitosamente");
+                        fnBuscar();
+                        mdlMantCategoria.hide();
+                    }
+                    else {
+                        alert("Ocurrio un error al guardar los datos en el servidor");
+                    }
+                },
+                error: function (error) {
+                    alert("Error:" + error.statusText);
+                }
+            });
+        }
+        $("#btnConfirmar").click(function () {
+            fnConfirmarDatos();
+        });
+        //Seccion de eliminar
+        function fnEliminar(pId) {
+            var confirmacion = confirm("¿Está seguro de eliminar el registro seleccionado?");
+            if (confirmacion == true) {
+                $.ajax({
+                    method: 'POST',
+                    url: '@Url.Action("Eliminar","Categoria")',
+                    data: { 'Id': pId},
+                    datatype: JSON,
+                    success: function (resultado) {
+                        if (resultado > 0) {
+                            alert("El registro se elimino exitosamente");
+                        }
+                        else {
+                            alert("Ocurrio un error al eliminar el registro en el servidor");
+                        }
+                    },
+                    error: function (error) {
+                        alert("Error: " + error.statusText);
+                    }
+                });
+            }
+        }
+    </script>       
+ }

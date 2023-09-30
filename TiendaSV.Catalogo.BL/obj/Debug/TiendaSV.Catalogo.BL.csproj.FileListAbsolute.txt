@@ -1,0 +1,11 @@
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.BL\obj\Debug\TiendaSV.Catalogo.BL.csproj.AssemblyReference.cache
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.BL\obj\Debug\TiendaSV.Catalogo.BL.csproj.CoreCompileInputs.cache
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.BL\bin\Debug\TiendaSV.Catalogo.BL.dll
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.BL\bin\Debug\TiendaSV.Catalogo.BL.pdb
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.BL\bin\Debug\TiendaSV.Catalogo.DAL.dll
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.BL\bin\Debug\TiendaSV.Catalogo.EN.dll
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.BL\bin\Debug\TiendaSV.Catalogo.DAL.pdb
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.BL\bin\Debug\TiendaSV.Catalogo.EN.pdb
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.BL\obj\Debug\TiendaSV.Catalogo.BL.csproj.CopyComplete
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.BL\obj\Debug\TiendaSV.Catalogo.BL.dll
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.BL\obj\Debug\TiendaSV.Catalogo.BL.pdb

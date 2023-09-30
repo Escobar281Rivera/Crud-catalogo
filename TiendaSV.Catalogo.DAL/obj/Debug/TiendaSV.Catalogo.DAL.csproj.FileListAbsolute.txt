@@ -1,0 +1,9 @@
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.DAL\obj\Debug\TiendaSV.Catalogo.DAL.csproj.AssemblyReference.cache
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.DAL\obj\Debug\TiendaSV.Catalogo.DAL.csproj.CoreCompileInputs.cache
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.DAL\bin\Debug\TiendaSV.Catalogo.DAL.dll
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.DAL\bin\Debug\TiendaSV.Catalogo.DAL.pdb
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.DAL\bin\Debug\TiendaSV.Catalogo.EN.dll
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.DAL\bin\Debug\TiendaSV.Catalogo.EN.pdb
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.DAL\obj\Debug\TiendaSV.Catalogo.DAL.csproj.CopyComplete
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.DAL\obj\Debug\TiendaSV.Catalogo.DAL.dll
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.DAL\obj\Debug\TiendaSV.Catalogo.DAL.pdb

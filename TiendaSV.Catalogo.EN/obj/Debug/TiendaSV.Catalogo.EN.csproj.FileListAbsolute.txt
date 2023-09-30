@@ -1,0 +1,6 @@
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.EN\bin\Debug\TiendaSV.Catalogo.EN.dll
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.EN\bin\Debug\TiendaSV.Catalogo.EN.pdb
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.EN\obj\Debug\TiendaSV.Catalogo.EN.csproj.AssemblyReference.cache
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.EN\obj\Debug\TiendaSV.Catalogo.EN.csproj.CoreCompileInputs.cache
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.EN\obj\Debug\TiendaSV.Catalogo.EN.dll
+C:\Users\wilal\source\repos\TiendaSV.Catalogo\TiendaSV.Catalogo.EN\obj\Debug\TiendaSV.Catalogo.EN.pdb
